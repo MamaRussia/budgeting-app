@@ -1,31 +1,40 @@
 const budgetController = (function () {
-    var x = 23;
-    var add = function (a) {
-        return x + a
-    }
 
-    return {
-        publicTest: function (b) {
-            return (add(b));
-            
-        }
-    }
+
+
 })();
 
 let UIController = (function () {
     
 
-    
+
 })();
 
 let appController = (function (budgetCtrl, UICtrl) {
-    
-    let z = budgetCtrl.publicTest(5);
-    return {
-        pubMethod: function () {
-            console.log(z);
-            
-        }
+
+    var controlAddItem = function () {
+        
+   //get input value from button
+        //add to budget controller
+        //add to UI
+        //calculate budget
+        //update UI with new budget
+
+console.log("I am alive");
+
     }
+    
+    document.querySelector(".add__btn").addEventListener("click", controlAddItem)
+    document.addEventListener("keydown", function (event) {
+     
+        event = event.which;
+        if (event === 13 || event.keyCode === 13) {
+         
+            console.log(event); 
+            controlAddItem();
+        }
+        
+    })
 
 })(budgetController, UIController);
+
